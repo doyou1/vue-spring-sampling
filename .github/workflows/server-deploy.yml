@@ -17,14 +17,14 @@ jobs:
         uses: actions/setup-java@v1.4.3
         with:
           java-version: 1.8
-          path: "${{ github.workspace }}/server"
+          # path: "${{ github.workspace }}/server"
 
       - name: Grant execute permission for gradlew
         run: chmod +x ./server/gradlew
         shell: bash
 
       - name: Build with Gradle
-        run: ./server/gradlew clean build
+        run: ./server/gradlew -p ./server clean build
         shell: bash
 
       - name: Get current time
