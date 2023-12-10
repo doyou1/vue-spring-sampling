@@ -40,8 +40,8 @@ jobs:
           mkdir -p server-deploy
           cp ./server/build/libs/*.jar server-deploy/
           cp ./server/Procfile server-deploy/Procfile
-          cp -r .ebextensions server-deploy/.ebextensions
-          cp -r .platform server-deploy/.platform
+          cp -r ./server/.ebextensions server-deploy/.ebextensions
+          cp -r ./server/.platform server-deploy/.platform
           cd server-deploy && zip -r server-deploy.zip .
 
       - name: Deploy to EB # (2)
