@@ -39,7 +39,7 @@ jobs:
         run: |
           mkdir -p server-deploy
           cp ./server/build/libs/*.jar server-deploy/
-          cp Procfile server-deploy/Procfile
+          cp ./server/Procfile server-deploy/Procfile
           cp -r .ebextensions server-deploy/.ebextensions
           cp -r .platform server-deploy/.platform
           cd server-deploy && zip -r server-deploy.zip .
