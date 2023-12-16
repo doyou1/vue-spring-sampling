@@ -28,7 +28,7 @@ class MemoController {
         list.add(newMemo)
         return ResponseEntity.ok(ResponseData(id, true))
     }
-    
+
     @PutMapping("/{id}")
     @CrossOrigin
     fun put(@PathVariable id: Int , @RequestBody memo: Memo) : ResponseEntity<ResponseData> {
