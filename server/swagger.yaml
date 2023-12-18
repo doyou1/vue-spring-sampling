@@ -6,7 +6,7 @@ info:
       https://github.com/doyou1/vue-spring-sampling
   version: 1.0.0
 servers:
-  - url: http://Aws-jh-env.eba-ppbenvkp.ap-northeast-1.elasticbeanstalk.com/api
+  - url: http://jh-memo-env.eba-khreh2xt.ap-northeast-1.elasticbeanstalk.com/api
 tags:
   - name: /api/memo
     description: about memo
