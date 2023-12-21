@@ -2,8 +2,7 @@
 on:
   push:
     branches:
-      - master  # push되면 실행될 브랜치를 선택합니다.
-                            # ex) master (저는 version/2020-12-11 브랜치로 지정)
+      - release  # push되면 실행될 브랜치를 선택합니다.
   workflow_dispatch: # 수동 실행
 
 jobs:
