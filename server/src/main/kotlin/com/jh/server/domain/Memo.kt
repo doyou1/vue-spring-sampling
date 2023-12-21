@@ -1,3 +1,6 @@
 package com.jh.server.domain
 
-data class Memo(val id: Int, val content: String, val isDone: Boolean);
+import jakarta.persistence.*
+
+@Entity
+data class Memo(@Id @GeneratedValue val id: Int = 0, @Column val content: String = "", @Column(name="isdone") val isDone: Boolean = false);

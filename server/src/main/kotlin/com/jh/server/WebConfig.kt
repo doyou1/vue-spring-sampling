@@ -9,8 +9,7 @@ class WebConfig: WebMvcConfigurer {
 
     override fun addCorsMappings(registry: CorsRegistry) {
         registry.addMapping("/api/**")
-                .allowedOrigins("http://localhost:8080")
-                .allowedOrigins("https://vue-spring-sampling.vercel.app")
+                .allowedOrigins("http://localhost:8080", "https://vue-spring-sampling.vercel.app")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTION")
     }
 }

@@ -2,39 +2,37 @@ package com.jh.server.controller
 
 import com.jh.server.domain.Memo
 import com.jh.server.domain.ResponseData
+import com.jh.server.service.MemoRepository
+import jakarta.annotation.PostConstruct
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api/memo")
 class MemoController {
-    val list =  mutableListOf<Memo>().apply {
-        repeat(2){ this.add( Memo(
-                id = it,
-                content = "",
-                isDone = false,
-        )) }
-    }
+
+    @Autowired
+    private lateinit var repo: MemoRepository
 
     @GetMapping("")
     fun list() : List<Memo> {
-        return list.toList()
+        return repo.findAll().toList()
+//        return list.toList()
     }
 
     @PostMapping("")
     fun new() : ResponseEntity<ResponseData> {
-        val id = list.size
-        val newMemo = Memo(id=id, content = "", isDone = false)
-        list.add(newMemo)
-        return ResponseEntity.ok(ResponseData(id, true))
+        val newId = repo.findAll().toList().size
+        val newMemo = Memo(id=newId, content = "", isDone = false)
+        repo.save(newMemo)
+        return ResponseEntity.ok(ResponseData(newId, true))
     }
 
     @PutMapping("/{id}")
     @CrossOrigin
     fun put(@PathVariable id: Int , @RequestBody memo: Memo) : ResponseEntity<ResponseData> {
-        val newList = list.map { if (it.id == id) memo else it }
-        list.clear()
-        list.addAll(newList)
+        repo.save(memo)
         return ResponseEntity.ok(ResponseData(id, true))
     }
 }
