@@ -26,10 +26,11 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	// https://mvnrepository.com/artifact/org.postgresql/postgresql
 	implementation("org.postgresql:postgresql")
-	// https://mvnrepository.com/artifact/com.googlecode.log4jdbc/log4jdbc
+//	 https://mvnrepository.com/artifact/com.googlecode.log4jdbc/log4jdbc
 	implementation("com.googlecode.log4jdbc:log4jdbc:1.2")
 
 	implementation ("org.springframework.boot:spring-boot-starter-data-jpa")
+
 
 }
 
