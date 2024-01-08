@@ -25,14 +25,13 @@ import { ElInput, ElCheckbox, ElButton } from "element-plus";
 import { ref, watch } from "vue";
 import invariant from "tiny-invariant";
 import { DocumentAdd } from '@element-plus/icons-vue'
+import { apiUrlTest} from "@/main";
 
 const { resultData: memoList, refetch: refetchMemoList } = useMemoList();
 const updateItem = ref<Memo>();
 const { resultData: updateResponse, mutate: updateMemo } = useUpdateMemo(updateItem);
 const { resultData: addResponse, mutate: addMemo } = useNewMemo();
 
-
-const apiUrlTest = import.meta.env.API_URL_TEST;
 
 const update = (
   value: boolean | string,
