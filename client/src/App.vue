@@ -1,4 +1,5 @@
 <template>
+  <div>API URL: {{ import.env.API_URL_TEST }}</div>
   <h2>result</h2>
   <ul>
     <li v-for="memo in memoList" :key="memo.id">
