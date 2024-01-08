@@ -1,5 +1,5 @@
 <template>
-  <div>API URL: {{ import.meta.env.API_URL_TEST }}</div>
+  <div>API URL: {{ apiUrlTest }}</div>
   <h2>result</h2>
   <ul>
     <li v-for="memo in memoList" :key="memo.id">
@@ -30,6 +30,9 @@ const { resultData: memoList, refetch: refetchMemoList } = useMemoList();
 const updateItem = ref<Memo>();
 const { resultData: updateResponse, mutate: updateMemo } = useUpdateMemo(updateItem);
 const { resultData: addResponse, mutate: addMemo } = useNewMemo();
+
+
+const apiUrlTest = import.meta.env.API_URL_TEST;
 
 const update = (
   value: boolean | string,
