@@ -25,7 +25,8 @@ import { ElInput, ElCheckbox, ElButton } from "element-plus";
 import { ref, watch } from "vue";
 import invariant from "tiny-invariant";
 import { DocumentAdd } from '@element-plus/icons-vue'
-const apiUrlTest = import.meta.env.API_URL_TEST;
+const apiUrlTest = import.meta.env.VITE_API_URL_TEST;
+console.log("apiUrlTest", apiUrlTest);
 
 const { resultData: memoList, refetch: refetchMemoList } = useMemoList();
 const updateItem = ref<Memo>();
