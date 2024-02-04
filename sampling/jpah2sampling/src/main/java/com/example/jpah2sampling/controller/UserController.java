@@ -43,4 +43,10 @@ public class UserController {
     ) {
         return userService.deleteUser(deleteUserRequestDto);
     }
+
+    @GetMapping("/test")
+    public String test() {
+        userService.readDb();
+        return "test";
+    }
 }
